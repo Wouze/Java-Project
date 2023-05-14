@@ -9,5 +9,5 @@ package javaproject;
  * @author m-ohm
  */
 public class Food {
-    char foodtype;
+    char food;
 }
