@@ -1,4 +1,4 @@
-
+package javaproject;
 //public class Hall {  }
 
 public class Hall {

@@ -1,4 +1,4 @@
-
+package javaproject;
 public class Food implements Payable{
    private String food;
    private String drink;

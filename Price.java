@@ -1,4 +1,4 @@
-
+package javaproject;
 public abstract class Price implements Payable{
 
     int CVV;
