@@ -1,4 +1,6 @@
 
+package javaproject;
+
 public interface Payable {
     public static final double TAX = 0.05;
     public static final double popcornP =15;
@@ -8,4 +10,7 @@ public interface Payable {
     public static final double pepsieP=5;
     public static final double waterP=2;
     
+    
+    
+    public abstract double calcPrice();
 }

@@ -1,4 +1,6 @@
 
+package javaproject;
+
  class Movie{
   public int movieId ; 
   public String name ;
@@ -68,5 +70,6 @@
     }
    
 }
+
 
 

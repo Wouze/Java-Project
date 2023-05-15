@@ -1,5 +1,5 @@
 
-//public class Hall {  }
+package javaproject;
 
 public class Hall {
     private boolean[] seats;

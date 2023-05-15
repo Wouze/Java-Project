@@ -1,5 +1,7 @@
 
-public abstract class Price implements Payable{
+package javaproject;
+
+public class Price implements Payable{
 
     int CVV;
     int expDate;
@@ -26,7 +28,7 @@ public abstract class Price implements Payable{
 
     }
    // public double getMoviePrice(){
-      //  return 25 + 25*TAX - 25*checkDiscount(getStudent());
+     //   return 25 + 25*TAX - 25*checkDiscount(getStudent);
     //}
     // public double getPrice() {
     // return price = price * checkDiscount();
@@ -34,11 +36,17 @@ public abstract class Price implements Payable{
     //@Override
     //public double calcPrice() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    //}
+    
 
-//public Static double getFoodPrice(int F,int D){
+public void getFoodPrice(int F,int D){
 
 
-//}
 }
+
+    @Override
+    public double calcPrice() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
+
 
