@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package javaproject;
 
 
@@ -20,10 +17,12 @@ public class Customer {
         this.Studnet = Studnet;
     }
 
-    public Customer(String userName, String Password) {
+    public Customer(String userName, String Password,int cusId) {
         this.userName = userName;
         this.Password = Password;
+        this.cusId = cusId;
     }
+   
 
     
     public int getCusId() {
