@@ -8,7 +8,10 @@ public class Producer {
     private boolean isPrem;
     private int NOguests;
     private int numberOfCamera;
-    private account Account;
+     private int id;
+    private String userName;
+    private String Password;
+
 
     /* public Producer(String userName, String Password) {
 
@@ -19,8 +22,7 @@ public class Producer {
      */
     Scanner input = new Scanner(System.in);
 
-    public Producer(account Account, String CompanyName, int securityCode, boolean isPrem) {
-        this.Account = Account;
+    public Producer(String CompanyName, int securityCode, boolean isPrem) {
         this.CompanyName = CompanyName;
         this.securityCode = securityCode;
         this.isPrem = isPrem;
@@ -40,13 +42,5 @@ public class Producer {
 
     }
     //public void addMovie(){
-
-    public account getAccount() {
-        return Account;
-    }
-
-    public void setAccount(account Account) {
-        this.Account = Account;
-    }
 
 }

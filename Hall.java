@@ -15,13 +15,15 @@ public class Hall {
     public boolean[] getSeats() {
         return seats;
     }
-
+     public boolean getISeats(int index) {
+        return seats[index];
+    }
     public String getType() {
         return type;
     }
 
-    public void setSeats(boolean[] seats) {
-        this.seats = seats;
+    public void bookSeats(int index) {
+        seats[index]=true;
     }
 
     public void setType(String type) {

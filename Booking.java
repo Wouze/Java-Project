@@ -22,11 +22,14 @@ public abstract class  Booking {
    //accounts
    private static ArrayList<Customer> accounts = new ArrayList<>();
    private static int accountCounter=-1;
+   public static int getAccountCounter(){
+       return accountCounter;
+   }
    
   public static void defultMovie(){
-  movies.add(new Movie(111 , "Barbie" , "Animation" , 7 , 120));
-  movies.add(new Movie(222,"Avengers:End Game","Action",18,160));
-  movies.add(new Movie(333,"Harry potter:Cup Of Fire","Sci-fi",15,140));
+  movies.add(new Movie(1 , "Barbie" , "Animation" , 7 , 120));
+  movies.add(new Movie(2,"Avengers:End Game","Action",18,160));
+  movies.add(new Movie(3,"Harry potter:Cup Of Fire","Sci-fi",15,140));
   
   }
   
@@ -62,6 +65,7 @@ public abstract class  Booking {
  }
   public static void createAccount(String userName,String Passward){
   accountCounter++;
+  int cusNumb = accountCounter;
   accounts.add(new Customer(userName,Passward));
   System.out.println("New Account Created Successefully");
   
@@ -114,9 +118,9 @@ public abstract class  Booking {
         return accounts;
     }
 
-    public static int getAccountCounter() {
-        return accountCounter;
-    }
+    //public static int getAccountCounter(String userName) {
+      //  for(customer c:accounts)
+    //}
 
     public static void setHall1(Hall hall1) {
         Booking.hall1 = hall1;
@@ -162,6 +166,7 @@ public abstract class  Booking {
     public static void setAccountCounter(int accountCounter) {
         Booking.accountCounter = accountCounter;
     }
+    
 //    
 //    public double calcTotalPrice(){
 //      if()

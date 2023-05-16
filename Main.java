@@ -101,7 +101,27 @@ public class Main {
         //Ticket booking 
         System.out.println("Do you Want A VIP Or A Standard Experience?(VIP|Standard)");
         String ex = input.next();
-        
+        if("VIP".equals(String.valueOf(ex))||"vip".equals(String.valueOf(ex))){
+            //method calling
+            boolean a = false;
+            do{
+            movieBooking.VprintSeats(Booking.getVIPhall1());
+            System.out.println("Select A Seat(Row-Column)");
+//            char r = input.next().charAt(0);
+//            char c = input.next().charAt(0);
+            String seat = input.next();
+            System.out.print(seat);
+            a =  movieBooking.bookVIPseat(seat);
+             
+             }
+            while (a != true);
+            movieBooking.VprintSeats(Booking.getVIPhall1());
+//getHall1().getSeats() = true;
+                    
+        }
+        else if("Standard".equals(String.valueOf(ex))||"standard".equals(String.valueOf(ex))){
+            //method calling
+        }
         
     }
 
@@ -111,42 +131,7 @@ public class Main {
 
 
         
-        
-
-        /*switch (choice) {
-            case 1:
                
-              //  Customer accountc = new Customer(userName, Passward);
-                System.out.println("Please provide us with your infotmation: ");
-                System.out.println("Are You a Student ? (Yes or No)");
-                String student = input.next();
-                System.out.println("How old are you?");
-                
-                
-                if (String.valueOf(student) == "Yes" || String.valueOf(student) == "yes") {
-                  //  accountc.setStudnet(true); }
-                System.out.println("Showing now:");
-                movieBooking.printMovies();
-                System.out.println("Select Movie to watch");
-                int Smovie = input.nextInt();
-                
-                //print the seets of the hall
-                //ask for number of tickets
-                break;
-                
-            /*case 2:
-                Prodecter accountp = new Prodecter(userName, Passward);
-                //method calling
-                System.out.println("Do you want to add a movie?");
-                boolean movie = input.nextBoolean();
-                System.out.println("Do you want a premier?");
-                boolean p1 = input.nextBoolean();
-                accountp.typeOfShow(p1);
-                break
-
-        }
-        System.out.println();
-           */
-        // Prodecter p1 = new Prodecter (111 , "" , 333 ,true);
+              
     
             

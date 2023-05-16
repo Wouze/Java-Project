@@ -1,21 +1,22 @@
 package javaproject;
 
 public class Customer {
- 
     private String userName;
     private String Password;
     private int Age;
     private boolean Studnet;
-    private account Account;
-
-    public Customer(account Account, int Age, boolean Studnet) {
-        this.Age = Age;
+ 
+    
+    public Customer(String userName , String Password,  int Age, boolean Studnet) {
+        this.userName = userName;
+        this.Password = Password;
         this.Studnet = Studnet;
     }
 
    public Customer(String userName, String Password ) {
         this.userName = userName;
         this.Password = Password;
+               
     }
 
     public String getUserName() {
@@ -36,16 +37,6 @@ public class Customer {
 
     public void setPassword(String Password) {
         this.Password = Password;
-    }
-    
-    
-
-    public account getAccount() {
-        return Account;
-    }
-
-    public void setAccount(account Account) {
-        this.Account = Account;
     }
     
     public int getAge() {

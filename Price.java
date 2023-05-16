@@ -19,6 +19,7 @@ public abstract class Price implements Payable{
 
     public double checkDiscount(boolean Student) {
         if (Student) {
+            
             return 0.05;
         } else {
             return 0;
