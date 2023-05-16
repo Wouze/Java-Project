@@ -320,6 +320,15 @@ public class movieBooking extends Booking{
         System.out.println(" is Booked seat, please choose another.");
     return a;
          
-}}
+}
+
+
+
+    @Override
+    public double calcPrice() {
+        double price = 25 + 25 * TAX - (checkDiscount(true));
+
+        return price;
+    }}
  
  
