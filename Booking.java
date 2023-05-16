@@ -2,7 +2,7 @@ package javaproject;
 
 
 import java.util.ArrayList;
-public abstract class  Booking {
+public abstract class  Booking implements Payable {
     
     //halls
     private static Hall hall1 ;
@@ -12,7 +12,7 @@ public abstract class  Booking {
    private static Hall VIPhall2 ;
    
     private int bookingId;
-    private Price price;
+    private double price;
     private int movieId;
     private int ticketQ;
     
@@ -58,7 +58,7 @@ public abstract class  Booking {
           check = false;
     }
        if(check)
-           System.out.println("Welcome back !");
+           System.out.println("Welcome back !\n");
        else
           System.out.println("userName or passward wrong");
           return check;
@@ -71,12 +71,16 @@ public abstract class  Booking {
   
   }
 
-    public Booking(int bookingId, Price price, int movieId) {
-        this.bookingId = bookingId;
-        
-        this.price = price;
+    public Booking(double price, int movieId) {
+      
+        calcPrice(price);
         this.movieId = movieId;
     }
+    
+    
+    public void calcPrice(double price) {
+        this.price = price + (price * TAX) - ( price * Payment.checkDiscount() );
+      ;}
 
     public static Hall getHall1() {
         return hall1;
@@ -102,7 +106,7 @@ public abstract class  Booking {
         return bookingId;
     }
 
-    public Price getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -147,7 +151,7 @@ public abstract class  Booking {
     }
 
     
-    public void setPrice(Price price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -1,9 +1,11 @@
 package javaproject;
 public class hallBooking extends Booking{
 
-    public hallBooking(int bookingId, int cusId, Price price, int movieId) {
-        super(bookingId,  price, movieId);
+    public hallBooking(int price, int movieId) {
+        super(price, movieId);
     }
+
+   
 
     
     

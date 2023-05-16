@@ -41,5 +41,11 @@ Scanner input = new Scanner(System.in);
            System.err.println(CVV + "Is Invalid ! ");
     }
     }
+    public static double checkDiscount(){
+    if(Booking.getAccounts().get(Booking.getAccountCounter()).getStudnet())
+         return 0.10;
+    else
+        return 0;
+    }
 }
 
