@@ -1,7 +1,7 @@
 package javaproject;
 
 public class Customer {
-    private String userName;
+     private String userName;
     private String Password;
     private int Age;
     private boolean Studnet;
@@ -11,6 +11,7 @@ public class Customer {
         this.userName = userName;
         this.Password = Password;
         this.Studnet = Studnet;
+        this.Age=Age;
     }
 
    public Customer(String userName, String Password ) {
@@ -54,7 +55,6 @@ public class Customer {
     public void setStudnet(boolean Studnet) {
         this.Studnet = Studnet;
     }
-    
-    
 }
+
 

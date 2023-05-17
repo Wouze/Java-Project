@@ -1,10 +1,8 @@
+
 package javaproject;
-
-
-import java.util.ArrayList;
-public abstract class  Booking implements Payable {
-    
-    //halls
+import java.util.*;
+public class Booking implements Payable{
+      //halls
     private static Hall hall1 ;
    private static Hall hall2 ;
    private static Hall hall3 ;
@@ -25,11 +23,27 @@ public abstract class  Booking implements Payable {
    public static int getAccountCounter(){
        return accountCounter;
    }
-   
+     // method ageLimit
+ public static boolean checkAgeLimit(int sm){
+//     System.out.println("movie Age"+movies.get(sm).getAgeLimit());
+//     System.out.println("customer Age"+accounts.get(getAccountCounter()).getAge());
+     if(movies.get(sm).getAgeLimit() > accounts.get(getAccountCounter()).getAge()){
+return false;
+//System.err.println("Entry denied! Please choose a suitable movie");
+         //keep entring age until it's >=ageLimit
+     }
+     else if(movies.get(sm).getAgeLimit() <= accounts.get(getAccountCounter()).getAge())
+         return true;
+     else
+         return true;
+ }
+   public static void addProducerM(Movie movie){
+   movies.add(movie);
+   }
   public static void defultMovie(){
-  movies.add(new Movie(1 , "Barbie" , "Animation" , 7 , 120));
-  movies.add(new Movie(2,"Avengers:End Game","Action",18,160));
-  movies.add(new Movie(3,"Harry potter:Cup Of Fire","Sci-fi",15,140));
+  movies.add(new Movie(  "Barbie" , "Animation" , 7 , 120));
+  movies.add(new Movie("Avengers:End Game","Action",18,160));
+  movies.add(new Movie("Harry potter:Cup Of Fire","Sci-fi",15,140));
   
   }
   
@@ -68,6 +82,14 @@ public abstract class  Booking implements Payable {
   int cusNumb = accountCounter;
   accounts.add(new Customer(userName,Passward));
   System.out.println("New Account Created Successefully");
+  
+  }
+  
+  public static void createAccount(String userName,String Passward,int age,boolean student){
+  accountCounter++;
+  int cusNumb = accountCounter;
+  accounts.add(new Customer(userName,Passward,age,student));
+  System.out.println("defult Account Created Successefully");
   
   }
 
@@ -170,10 +192,4 @@ public abstract class  Booking implements Payable {
     public static void setAccountCounter(int accountCounter) {
         Booking.accountCounter = accountCounter;
     }
-    
-//    
-//    public double calcTotalPrice(){
-//      if()
-//    }
-    
 }

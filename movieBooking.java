@@ -1,8 +1,9 @@
-package javaproject;
 
+package javaproject;
 import java.util.*;
 public class movieBooking extends Booking{
- 
+    
+    
     private String seatnum;
     private boolean isVIP;
     
@@ -178,13 +179,13 @@ public class movieBooking extends Booking{
     if(a==true)
            System.out.println(" - Seat booked successfully -");
     else
-        System.out.println(" - Seat is already booked, please choose another -");
+        System.err.println(" - Seat is already booked, please choose another -");
     return a;
   }
     
     //book a seat in standered hall
     public static boolean  bookSseat(String index){
-        //a return true if seat booked succssesfully and false if it is already booked 
+        // return true if seat booked succssesfully and false if it is already booked 
         boolean a=false;
     switch(index){
                 case "1A":
@@ -360,5 +361,4 @@ public class movieBooking extends Booking{
 //
 //        return price;}
     }
- 
- 
+

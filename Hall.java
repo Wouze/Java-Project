@@ -1,8 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package javaproject;
-//public class Hall {  }
 
+/**
+ *
+ * @author hp
+ */
 public class Hall {
-    private boolean[] seats;
+     private boolean[] seats;
     private String type;
     private int hallID;
 
@@ -29,7 +36,4 @@ public class Hall {
     public void setType(String type) {
         this.type = type;
     }
-    
-    
-    
 }
