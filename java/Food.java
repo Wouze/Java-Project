@@ -1,4 +1,7 @@
-package javaproject;
+package java;
+
+import java.Payable;
+
 public class Food implements Payable{
    private String food;
    private String drink;

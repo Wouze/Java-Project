@@ -1,5 +1,5 @@
 
-package javaproject;
+package java;
 import java.util.*;
 public class movieBooking extends Booking{
     

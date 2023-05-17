@@ -1,4 +1,4 @@
-package javaproject;
+package java;
 import java.util.Scanner;
 public abstract class Payment implements Payable{
 Scanner input = new Scanner(System.in);

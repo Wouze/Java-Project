@@ -1,5 +1,10 @@
 
-package javaproject;
+package java;
+import java.Customer;
+import java.Hall;
+import java.Movie;
+import java.Payable;
+import java.Payment;
 import java.util.*;
 public class Booking implements Payable{
       //halls
