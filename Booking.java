@@ -1,5 +1,5 @@
 
-package javaproject;
+package JavaProject;
 
 import java.util.*;
 
@@ -105,7 +105,7 @@ return false;
   accountCounter++;
   int cusNumb = accountCounter;
   accounts.add(new Customer(userName,Passward,age,student));
-  System.out.println("defult Account Created Successefully");
+
  
   }
 

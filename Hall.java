@@ -1,5 +1,5 @@
 
-package javaproject;
+package JavaProject;
 
 
 public class Hall {

@@ -1,5 +1,5 @@
 
-package javaproject;
+package JavaProject;
   
 import java.io.*;
 import java.util.Formatter;

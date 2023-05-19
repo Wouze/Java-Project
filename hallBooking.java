@@ -1,4 +1,4 @@
-package javaproject;
+package JavaProject;
 	
 public class hallBooking extends Booking{
     String hallType;

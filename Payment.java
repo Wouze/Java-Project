@@ -1,5 +1,5 @@
 
-package javaproject;
+package JavaProject;
 
 import java.util.*;
 public class Payment implements Payable{
@@ -49,7 +49,7 @@ public class Payment implements Payable{
         do{
         try{
            
-        System.out.println("Enter Your Card number");
+        System.out.println("\nEnter Your Card number");
         double num = input.nextInt();
        
        

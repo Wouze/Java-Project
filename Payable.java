@@ -1,4 +1,4 @@
-package javaproject;
+package JavaProject;
 public interface Payable {
     public static final double TAX = 0.05;
     public static final double popcornP =15;

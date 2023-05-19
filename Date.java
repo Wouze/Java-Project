@@ -1,4 +1,4 @@
-package javaproject;
+package JavaProject;
 public class Date {
     private int day;
     private int month;
