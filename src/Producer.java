@@ -31,6 +31,11 @@ public class Producer {
         this.numberOfCamera = numberOfCamera;
     }
     
+    public Producer() {
+        this(0, 0);
+       
+    }
+    
 
     public Producer(String CompanyName, boolean isPrem) {
         this.CompanyName = CompanyName;
@@ -70,6 +75,12 @@ public class Producer {
 
     }
     //public void addMovie(){
+
+    @Override
+    public String toString() {
+        return String.format("CompanyName:%s/nisPrem:%b/nNOguests:%d/nnumberOfCamera:%d/nuserName:%s/nPassword:%s/n",CompanyName,isPrem,NOguests,numberOfCamera,userName,Password);
+    }
+    
 
 }
 

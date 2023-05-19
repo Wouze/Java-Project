@@ -2,7 +2,8 @@ package javaproject;
 
 
 public class Movie {
-public int movieId ; 
+
+public int movieId ;
   public String name ;
   public String Genra;
   public int ageLimit;
@@ -15,7 +16,7 @@ public int movieId ;
         this.ageLimit = ageLimit;
         this.duration = duration;
     }
-    
+   
 
     @Override
     public String toString() {
@@ -54,6 +55,4 @@ public int movieId ;
         this.duration = duration;
     }    
 }
-
-
 

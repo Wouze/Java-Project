@@ -14,11 +14,20 @@ public class Customer {
         this.Age=Age;
     }
 
+    
    public Customer(String userName, String Password ) {
         this.userName = userName;
         this.Password = Password;
                
     }
+
+   //adeem 
+    public Customer() {
+        this("" , "",0, false);
+    }
+   
+   
+   
 
     public String getUserName() {
         return userName;
@@ -55,6 +64,12 @@ public class Customer {
     public void setStudnet(boolean Studnet) {
         this.Studnet = Studnet;
     }
+
+    @Override
+    public String toString() {
+        return String.format("userName:%s/nPassword:%s/nAge:%d/nStudnet%%b" ,userName,Password ,Age, Studnet);
+    }
+    
 }
 
 

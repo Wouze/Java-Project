@@ -1,5 +1,5 @@
 
-package javaproject;
+package javaproject.old;
 
 public class Hall {
     private boolean[] seats;

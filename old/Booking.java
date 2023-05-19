@@ -1,5 +1,5 @@
 
-package javaproject;
+package javaproject.old;
 
 public abstract class  Booking {
     

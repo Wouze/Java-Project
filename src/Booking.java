@@ -1,7 +1,9 @@
 
 package javaproject;
+
 import java.util.*;
-public class Booking implements Payable{
+
+public abstract class Booking implements Payable{
       //halls
     private static Hall hall1 ;
    private static Hall hall2 ;
@@ -13,7 +15,21 @@ public class Booking implements Payable{
     private double price;
     private int movieId;
     private int ticketQ;
+
     
+    
+    
+    
+
+
+    public Booking(double price) {
+       
+        this.price = price;
+    }
+   
+   
+   
+   
     //array of movies
      static ArrayList<Movie>  movies = new ArrayList<>();
      
@@ -44,13 +60,13 @@ return false;
   movies.add(new Movie(  "Barbie" , "Animation" , 7 , 120));
   movies.add(new Movie("Avengers:End Game","Action",18,160));
   movies.add(new Movie("Harry potter:Cup Of Fire","Sci-fi",15,140));
-  
+ 
   }
-  
+ 
   public static void createHalls(){
-       hall1 = new Hall(20,"Regular",1111); 
-       hall2 = new Hall(20,"Regular",1112); 
-       hall3 = new Hall(20,"Regular",1113); 
+       hall1 = new Hall(20,"Regular",1111);
+       hall2 = new Hall(20,"Regular",1112);
+       hall3 = new Hall(20,"Regular",1113);
        VIPhall1 = new Hall(15,"VIP",1114);
        VIPhall2 = new Hall(15,"VIP",1115);
   }
@@ -62,7 +78,7 @@ return false;
         System.out.printf("%d-%s \n",(counter+1),ele);
         counter ++;
     }}
-  
+ 
    public static boolean checkAccount(String userName,String passward){
         boolean check=false;
     for(Customer c :accounts){
@@ -82,24 +98,24 @@ return false;
   int cusNumb = accountCounter;
   accounts.add(new Customer(userName,Passward));
   System.out.println("New Account Created Successefully");
-  
+ 
   }
-  
+ 
   public static void createAccount(String userName,String Passward,int age,boolean student){
   accountCounter++;
   int cusNumb = accountCounter;
   accounts.add(new Customer(userName,Passward,age,student));
   System.out.println("defult Account Created Successefully");
-  
+ 
   }
 
     public Booking(double price, int movieId) {
-      
+     
         calcPrice(price);
         this.movieId = movieId;
     }
-    
-    
+   
+   
     public void calcPrice(double price) {
         this.price = price + (price * TAX) - ( price * Payment.checkDiscount() );
       ;}
@@ -172,7 +188,7 @@ return false;
         this.bookingId = bookingId;
     }
 
-    
+   
     public void setPrice(double price) {
         this.price = price;
     }
@@ -193,3 +209,4 @@ return false;
         Booking.accountCounter = accountCounter;
     }
 }
+

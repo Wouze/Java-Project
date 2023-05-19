@@ -1,5 +1,5 @@
 
-package javaproject;
+package javaproject.old;
 
 import java.util.Scanner;
 public class Prodecter {

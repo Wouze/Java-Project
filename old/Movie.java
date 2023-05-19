@@ -1,5 +1,5 @@
 
-package javaproject;
+package javaproject.old;
 
  class Movie{
   public int movieId ; 
