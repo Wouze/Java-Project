@@ -1,5 +1,7 @@
 package JavaProject;
 
+import JavaProject.Food;
+import JavaProject.Booking;
 import java.util.*;
 
 public class Main {
@@ -37,14 +39,16 @@ public class Main {
 
         ArrayList<Booking> ticketsArray = new ArrayList();
 
-        //JANAN ADDED PREMIER
+       
         Booking.createHalls();
         Booking.defultMovie();
+        WriteFiletxt write = new WriteFiletxt();
+        ReadtxtFile read = new ReadtxtFile();
 
         Booking.createAccount("Layan", "1122", 15, true);//creat defult account to test
 
         do {
-            System.out.println("Welcome to Vox Cinema");
+            System.out.println("Welcome to AI Cinema");
 
             System.out.println("Enter your choice:");
             System.out.println("1-Customer \n2-Producer");
@@ -56,14 +60,15 @@ public class Main {
                     choice = input.nextInt();
                     if (choice != 1 && choice != 2) {
                         System.err.println("Please choose number from the menu");
-                        valid = false;}
-                     else 
+                        valid = false;
+                    } else {
                         valid = true;
-                    
+                    }
+
                 } while (valid != true);
 
                 if (choice == 1) { //CUSTOMER
-                    //LOGICAL ERROR  (ACCEPTS ALL VALUES)
+                    
                     System.out.println("Do you have an account?(Yes or No)");
 
                     do {//to check if haveAcc is not "yes" or "no" then ask again
@@ -108,21 +113,22 @@ public class Main {
                         }
                     }
 
-                    //to Movie booking page
+                    //to Movie booking 
                     Booking.printMovies();
                     boolean answer = true;
                     do {//to check if the movie is not suitable ask to enter another
                         System.out.println("Select A Movie to watch");
-                        
-                       do{
-                        sm = input.nextInt();
-                     if(sm>5 || sm<=0){//if selected  movie is above than 5 or less or equal to 0
-                       System.err.println("Please Select from the menu");
-                       valid = false;}
-                       else
-                       valid =true;
-                       }while(valid!=true);
-                        
+
+                        do {
+                            sm = input.nextInt();
+                            if (sm > 5 || sm <= 0) {//if selected  movie is above than 5 or less or equal to 0
+                                System.err.println("Please Select from the menu");
+                                valid = false;
+                            } else {
+                                valid = true;
+                            }
+                        } while (valid != true);
+
                         sm -= 1;
                         //METHOD THAT CHECKS THE USER'S AGE***************
                         answer = Booking.checkAgeLimit(sm);
@@ -132,10 +138,10 @@ public class Main {
 
                         }
                     } while (answer != true);
-                    //JANAN*****************
+                    
                     System.out.println("Would You Like To Book A Movie Hall For A Special Occasion?(Yes|No)");
                     do {//to check if hallBook is not "yes" or "no" then ask again
-                      hallBook = input.next();
+                        hallBook = input.next();
                         if ("yes".equals(hallBook) || "Yes".equals(hallBook) || "No".equals(hallBook) || "no".equals(hallBook)) {
                             valid = true;
                         } else {
@@ -143,53 +149,51 @@ public class Main {
                             valid = false;
                         }
                     } while (valid != true);
-                  
+
                     if ("Yes".equals(String.valueOf(hallBook)) || "yes".equals(String.valueOf(hallBook))) {
                         System.out.println("Do You Want A VIP or Standard Hall?");
-                        
+
                         do {//to check if hallType is not "VIP" or "Standard" then ask again
-                        hallType = input.next();
-                        if ("VIP".equals(hallType) || "vip".equals(hallType) || "Standard".equals(hallType) || "standard".equals(hallType)) {
-                            valid = true;
-                        } else {
-                            System.err.println("Please choose VIP or Standard");
-                            valid = false;
-                        }
-                    } while (valid != true);
-                        
+                            hallType = input.next();
+                            if ("VIP".equals(hallType) || "vip".equals(hallType) || "Standard".equals(hallType) || "standard".equals(hallType)) {
+                                valid = true;
+                            } else {
+                                System.err.println("Please choose VIP or Standard");
+                                valid = false;
+                            }
+                        } while (valid != true);
+
                         if ("VIP".equals(String.valueOf(hallType)) || "vip".equals(String.valueOf(hallType))) {
                             System.out.println("Your Hall Has Been Successfully booked");
                             hallBooking hallB = new hallBooking(5000, "VIP");
                             ticketsArray.add(hallB);
                             hallB.printHallBooking(sm);
                             Payment.cardInfo();
-                            System.out.println("Online Purchase\nAmount: 5000SAR\nAt Vox Cinema");
+                            System.out.println("Online Purchase\nAmount: 5000SAR\nAt AI Cinema\n");
                             
-                        } else if ("Standard".equals(String.valueOf(hallType)) || "standard".equals(String.valueOf(hallType)))  {
+
+                        } else if ("Standard".equals(String.valueOf(hallType)) || "standard".equals(String.valueOf(hallType))) {
                             System.out.println("Your Hall Has Been Successfully Booked");
                             hallBooking hallB = new hallBooking(2500, "Standard");
                             ticketsArray.add(hallB);
                             Payment.cardInfo();
-                            System.out.println("Online Purchase\nAmount: 2500SAR\nAt Vox Cinema");
+                            System.out.println("Online Purchase\nAmount: 2500SAR\nAt AI Cinema\n");
 
                         }
                     }
 
                     if ("No".equals(String.valueOf(hallBook)) || "no".equals(String.valueOf(hallBook))) {
                         System.out.println("Do you Want A VIP Or A Standard Experience?(VIP|Standard)");
-                        do{//to check if ex is not "VIP" or "Standard" then ask again
-                        ex = input.next();    
-                        if ("VIP".equals(ex) || "vip".equals(ex) || "Standard".equals(ex) || "standard".equals(ex)) {
-                            valid = true;
-                        } else {
-                            System.err.println("Please choose VIP or Standard");
-                            valid = false;
-                        }
-                    } while (valid != true);
-                        
+                        do {//to check if ex is not "VIP" or "Standard" then ask again
+                            ex = input.next();
+                            if ("VIP".equals(ex) || "vip".equals(ex) || "Standard".equals(ex) || "standard".equals(ex)) {
+                                valid = true;
+                            } else {
+                                System.err.println("Please choose VIP or Standard");
+                                valid = false;
+                            }
+                        } while (valid != true);
 
-                   
-                        
                         boolean Bookingsucs = false; //flag for tickets booking (true --> booked successfully)
                         if ("VIP".equals(String.valueOf(ex)) || "vip".equals(String.valueOf(ex))) {
                             isVIP = true;
@@ -201,7 +205,7 @@ public class Main {
 
                                 Bookingsucs = movieBooking.bookVIPseat(seat);
                             } while (Bookingsucs != true);
-                             System.out.println();
+                            System.out.println();
                             movieBooking.VprintSeats(Booking.getVIPhall1());//print seats after booking
                             price = 50; //set price for vip tickets
                         } else if ("Standard".equals(String.valueOf(ex)) || "standard".equals(String.valueOf(ex))) {
@@ -221,99 +225,119 @@ public class Main {
                         System.out.println();
                         ticketsArray.add(Ticket1);
 
-                        //JANAN***********
+                        
                         //Buying Snacks
                         System.out.println("Would You Like To Buy A Snack?(Yes|No)");
-                         do {//to check if hallBook is not "yes" or "no" then ask again
-                        snack = input.next();
-                        if ("yes".equals(snack) || "Yes".equals(snack) || "No".equals(snack) || "no".equals(snack)) {
-                            valid = true;
-                        } else {
-                            System.err.println("Please choose Yes or No");
-                            valid = false;
-                        }
-                    } while (valid != true);
-                        
-                       
+                        do {//to check if hallBook is not "yes" or "no" then ask again
+                            snack = input.next();
+                            if ("yes".equals(snack) || "Yes".equals(snack) || "No".equals(snack) || "no".equals(snack)) {
+                                valid = true;
+                            } else {
+                                System.err.println("Please choose Yes or No");
+                                valid = false;
+                            }
+                        } while (valid != true);
+
                         if ("Yes".equals(String.valueOf(snack)) || "yes".equals(String.valueOf(snack))) {
                             System.out.println("Choose A Snack from The Menu");
                             Food.PrintFood();
-                            do{
-                            Fchoice = input.nextInt();
-                            if(Fchoice>3 || Fchoice<=0){
-                            System.err.println("Please choose from menu");
-                            valid = false;
-                            }
-                            else
-                               valid=true;
-                              }while(valid!=true);
-                            
+                            do {
+                                Fchoice = input.nextInt();
+                                if (Fchoice > 3 || Fchoice <= 0) {
+                                    System.err.println("Please choose from menu");
+                                    valid = false;
+                                } else {
+                                    valid = true;
+                                }
+                            } while (valid != true);
+
                             System.out.println("How Many Would You Like To Get?");
-                            do{
+                            do {
                                 FQ = input.nextInt();
-                            if(FQ>10 || FQ<0){
-                            System.err.println("Invalid quantity, you are allowed to choose up to 10");
-                            valid = false;
-                            }
-                            else
-                               valid=true;
-                              }while(valid!=true);
-                             
+                                if (FQ > 10 || FQ < 0) {
+                                    System.err.println("Invalid quantity, you are allowed to choose up to 10");
+                                    valid = false;
+                                } else {
+                                    valid = true;
+                                }
+                            } while (valid != true);
+
                             System.out.println("Choose A Drink From The menu");
                             Food.PrintDrink();
-                            do{
-                            Dchoice = input.nextInt();
-                            if(Dchoice>3 || Dchoice<=0){
-                            System.err.println("Please choose from menu");
-                            valid = false;
-                            }
-                            else
-                               valid=true;
-                              }while(valid!=true);
-                            
+                            do {
+                                Dchoice = input.nextInt();
+                                if (Dchoice > 3 || Dchoice <= 0) {
+                                    System.err.println("Please choose from menu");
+                                    valid = false;
+                                } else {
+                                    valid = true;
+                                }
+                            } while (valid != true);
+
                             System.out.println("How Many Would You Like To Get?");
-                             do{
+                            do {
                                 DQ = input.nextInt();
-                            if(DQ>10 || DQ<0){
-                            System.err.println("Invalid quantity, you are allowed to choose up to 10");
-                            valid = false;
-                            }
-                            else
-                               valid=true;
-                              }while(valid!=true);
-                           
+                                if (DQ > 10 || DQ < 0) {
+                                    System.err.println("Invalid quantity, you are allowed to choose up to 10");
+                                    valid = false;
+                                } else {
+                                    valid = true;
+                                }
+                            } while (valid != true);
+
                             FDTotalPrice = Food.calcPrice(Fchoice, FQ, Dchoice, DQ);
-                            //SNACK PRICE ADDED TO TOTAL PRICE*********************************************************
+                            //SNACK PRICE ADDED TO TOTAL PRICE**
                             System.out.println("Your Final Total Price Is: " + (Ticket1.TicketTotalPrice() + FDTotalPrice) + "SAR");
 
                         }
-                       //Take Card Info
+                        //Take Card Info
                         Payment.cardInfo();
                         //Print Payment message
-                        System.out.println("\nOnline Purchase\nAmount: " + (Ticket1.TicketTotalPrice() + FDTotalPrice) + " SAR\nAt Vox Cinema");
-                       
+                        System.out.println("\nOnline Purchase\nAmount: " + (Ticket1.TicketTotalPrice() + FDTotalPrice) + " SAR\nAt AI Cinema\n");
+
                     }
-                } //JANAN***
-                
-                
+                    write.openFile("CustomerTicket.txt");
+                    for (Booking b : ticketsArray) {
+                        write.writeFile(b);//write the file by calling toString method based on whether it is instance of MovieBooking or HallBooking 
+                    }
+                    write.closeFile();
+                   System.out.println("Ticket Saved in File Successfully! ");
+                   System.out.println("Do You Want to Print Your Ticket?");
+                   String option;
+                   do {
+                     option= input.next();
+                      if ("yes".equals(option) || "Yes".equals(option) || "No".equals(option) || "no".equals(option)) {
+                            valid = true;}
+                      else{
+                         valid = false;
+                      System.err.println("Please enter yes or no");}
+ 
+                    } while (valid != true);
+                     if ("yes".equals(option) || "Yes".equals(option)){
+                            read.openFile("CustomerTicket.txt");
+                            read.readFile();
+                            read.closefile();}
+                   System.exit(0);
+                } 
                 else if (choice == 2) { //Producer
                     int i = 1;
                     System.out.println("Enter security code");
-                    do{
-                    String SC = input.next();
-                    if (String.valueOf(SC).equals("12345")){
-                       valid = true;
-                    }
-                    else { System.err.println("Invaled Security code");
-                        valid = false; }
-                    
-                    }while(valid!=true);
+                    do {
+                        String SC = input.next();
+                        if (String.valueOf(SC).equals("12345")) {
+                            valid = true;
+                        } else {
+                            System.err.println("Invaled Security code");
+                            valid = false;
+                        }
+
+                    } while (valid != true);
                     System.out.println("Provide Us With Your Company's Name");
                     String companyName = input.next();
                     System.out.println("Would You Like To Add A Movie?");
-                    
+
                     do {//to check if ans is not "yes" or "no" then ask again
-                      ans = input.next();
+                        ans = input.next();
                         if ("yes".equals(ans) || "Yes".equals(ans) || "No".equals(ans) || "no".equals(ans)) {
                             valid = true;
                         } else {
@@ -321,20 +345,19 @@ public class Main {
                             valid = false;
                         }
                     } while (valid != true);
-                    
-                    
+
                     if ("Yes".equals(String.valueOf(ans)) || "yes".equals(String.valueOf(ans))) {
                         System.out.println("How Many Movies Would You Like To Add");
                         //Producer allowed to add maximum 2 movies
-                        do{
+                        do {
                             mAdded = input.nextInt();
-                            if(mAdded>=3 || mAdded <=0){
+                            if (mAdded >= 3 || mAdded <= 0) {
                                 System.err.println("invalid quantity, you are allowed to add up to 2 movies");
                                 valid = false;
-                        }
-                            else
+                            } else {
                                 valid = true;
-                        }while(valid!=true);
+                            }
+                        } while (valid != true);
                         do {
                             System.out.println("Provide Us With The Movie's name");
                             String mName = input.next();
@@ -344,67 +367,69 @@ public class Main {
                             String genra = input.next();
                             System.out.println("What Is The Movie's Age Restriction");
                             //maximum age restriction is 21+
-                            do{
-                            ageR = input.nextInt();
-                            if(ageR>21 || ageR<=0){
-                                System.err.println("Invalid Age restriction, you are allowed to choose up to 21");
-                                valid = false;
-                            }
-                            else
-                                valid = true;
-                            }while(valid!=true);
-                            
+                            do {
+                                ageR = input.nextInt();
+                                if (ageR > 21 || ageR <= 0) {
+                                    System.err.println("Invalid Age restriction, you are allowed to choose up to 21");
+                                    valid = false;
+                                } else {
+                                    valid = true;
+                                }
+                            } while (valid != true);
+
                             //CREATING AND ADDING A MOVIE TO THE LIST
                             Movie p1 = new Movie(mName, genra, ageR, duration);
                             Booking.addProducerM(p1);
                             System.out.println("Movie Added Successfully!");
                             //PRINTING THE MOVIE AFTER BEING ADDED TO THE LIST
-                            //edit : print added movie info
+                            
                             Booking.printMovies();
                             System.out.println("Is It A Premier?(Yes|No)");
                             do {//to check if ans is not "yes" or "no" then ask again
-                           pre = input.next();
-                        if ("yes".equals(pre) || "Yes".equals(pre) || "No".equals(pre) || "no".equals(pre)) {
-                            valid = true;
-                        } else {
-                            System.err.println("Please choose Yes or No");
-                            valid = false;
-                        }
-                    } while (valid != true);
-                    
+                                pre = input.next();
+                                if ("yes".equals(pre) || "Yes".equals(pre) || "No".equals(pre) || "no".equals(pre)) {
+                                    valid = true;
+                                } else {
+                                    System.err.println("Please choose Yes or No");
+                                    valid = false;
+                                }
+                            } while (valid != true);
+
                             i++;
                             if ("Yes".equals(String.valueOf(pre)) || "yes".equals(String.valueOf(pre))) {
                                 System.out.println("What Is The Approximate Number Of Your Guests?");
                                 //Number of guests allowed is up to 1000 
-                                
-                               do{
-                                guest = input.nextInt();
-                               if(guest>=1000 || guest<=0){
-                               System.err.println("Invalid Number of guests, you are allowed to choose up to 1000");
-                               valid = false;}
-                               else 
-                                   valid = true;}
-                               while(valid!=true);
-                               
+
+                                do {
+                                    guest = input.nextInt();
+                                    if (guest >= 1000 || guest <= 0) {
+                                        System.err.println("Invalid Number of guests, you are allowed to choose up to 1000");
+                                        valid = false;
+                                    } else {
+                                        valid = true;
+                                    }
+                                } while (valid != true);
+
                                 System.out.println("How Many Cameras Would You Like?");
                                 //number of cameras allowed is up to 20
-                                do{
-                               camera = input.nextInt();
-                               if(camera>20 || camera<=0){
-                                 System.err.println("Invalid Number of cameras, you are allowed to choose up to 20");
-                                 valid = false;
-                               }else
-                                   valid = true;
-                                }while(valid!=true);
-                                
-                                
-                                
+                                do {
+                                    camera = input.nextInt();
+                                    if (camera > 20 || camera <= 0) {
+                                        System.err.println("Invalid Number of cameras, you are allowed to choose up to 20");
+                                        valid = false;
+                                    } else {
+                                        valid = true;
+                                    }
+                                } while (valid != true);
+
                                 premier = true;
                             } else if ("No".equals(String.valueOf(pre)) || "no".equals(String.valueOf(pre))) {
                                 premier = false;
 
                             }
+
                             Producer pp = new Producer(companyName, premier);
+
                         } while (i <= mAdded);
 
                         System.out.println("Thank You For Visiting Our Site");
@@ -412,56 +437,30 @@ public class Main {
                     }//DOES NOT WANT TO ADD A MOVIE
                     else if ("No".equals(String.valueOf(ans)) || "no".equals(String.valueOf(ans))) {
                         System.out.println("Thank you");
-                    } 
+
                     }
 
-                
-
-                //ENHANCED FOR PRINTS ELEMENTS OF ARRAYLIST TICKETSARRAY
-                for (Booking e : ticketsArray) {
-                    System.out.println("ToString Method:");
-                    System.out.println(e);
-                    if (e instanceof hallBooking) {
-                        hallBooking ele = (hallBooking) e;
-                        ele.printHallBooking(sm);
+                    //ENHANCED FOR PRINTS ELEMENTS OF ARRAYLIST TICKETSARRAY
+                    for (Booking e : ticketsArray) {
+                        System.out.println("ToString Method:");
+                        if (e instanceof hallBooking) {
+                            hallBooking ele = (hallBooking) e;
+                            ele.printHallBooking(sm);
+                        }
                     }
+
+                    System.out.println("\n\nEnter any num to Quit or 1 to play again");
+                    Again = input.nextInt();
+                    System.out.println();}
                 }
-
-//
-//System.out.println("----------------------------------------------------------");
-//      System.out.println("to Read from txt File");
-//      WriteFiletxt write =new WriteFiletxt();
-//      write .openFile("producerTicket.txt");
-//   Producer q2 =new Producer( companyName,   premier,  guest,  camera,  userName,  Passward);
-//      ArrayList <Producer> producerlist=new ArrayList<>();
-//      producerlist.add(q2);
-//     
-//      for (Producer  sos: producerlist){
-//         write.writeFile(q2):
-//      }
-//      write.closeFile();
-//     
-//      
-//       ReadtxtFile read =new  ReadtxtFile();
-//       read.openFile("producerTicket.txt");
-//             read.readFile();
-//             read.closefile();
-//
-                System.out.println("Enter any num to Quit or 1 to play again");
-                Again = input.nextInt();
-            } catch (InputMismatchException e) {
+             catch (InputMismatchException e) {
                 System.err.println("INVALED INPUT -MismatchException");
                 System.exit(1);
             }
         } while (Again == 1);
+        
+
     }
 
 }
-
-//     catch(InputMismatchException e){
-//         System.err.println("INVALID INPUT!");
-//         input.next();
-//     catch(ArrayIndexOutOfBoundsException e){
-//         System.err.println("ENTER A NUMBER WITHIN THE RANGE 0 TO ARRAYLENGTH-1");
-//         input.next();
 

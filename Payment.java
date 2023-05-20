@@ -12,7 +12,7 @@ public class Payment implements Payable{
     public Payment(int CVV, int expDate, int cardNum, double price) {
         this.CVV = CVV;
         this.expDate = expDate;
-       // this.cardNum = checkNum(cardNum);
+   
         this.price = price;
     }
 
@@ -20,29 +20,7 @@ public class Payment implements Payable{
         //constructor chaining
         this(0,0,cardNum,0);
     }  
-   
-//CHANGED METHOD
-//    public static void checkNum(int cardNum ) {
-//        String cn;
-//        int cardNumber ;
-//        String cardnum = String.valueOf(cardNum);
-//        if(cardnum.length()==10){
-//            setCardNum(cardNum);
-//        }
-//      //  else if (cardnum.length() < 10 || cardnum.length > 10) {
-//        else{
-//            do{ System.err.println("Invalid Card Number");
-//                System.out.println("Enter A Valid CardNum(10 Digits)");
-//                 cardNumber = input.nextInt();
-//                cn =  String.valueOf(cardNumber);  
-//           }while(cn.length()!= 10);
-//           setCardNum(cardNumber);}
-//        
-//          
-//           }                        
-// less than 10 numbers
-   
-   
+
     public static void cardInfo(){
         String validateM = "Valid", validateY = "Valid",validateCVV = "Valid";
         boolean flag =true;
@@ -54,16 +32,13 @@ public class Payment implements Payable{
        
        
         String numS = String.valueOf(num);
-       System.out.println(numS.length());
+       
         if (numS.length()-2 != 10){
             flag = false;
             System.err.println("Invaled Num");}
         else
             flag=true;
        
-           
-           
-//        checkNum(num);
         }
         catch(InputMismatchException e){
         System.err.println("Invaled Num");
@@ -73,10 +48,9 @@ public class Payment implements Payable{
        
        
         System.out.println("Enter Expiration Date");
-    //loop
+    
         do{ System.out.println("Month : ");
           int month = input.nextInt();
-          //CHANGED AND TO OR
         if (month > 12 || month < 1){
             System.err.println("Invalid Month ! Try Again");
         validateM = "Invalid";}
@@ -94,7 +68,7 @@ public class Payment implements Payable{
           do{  System.out.print("CVV = ");
              CVV =  input.nextInt();
             String cvv = String.valueOf(CVV);
-            //CHANGED AND TO OR
+         
                if (cvv.length() < 3 || cvv.length() > 3) {
            System.err.println("CVV Is Invalid! ");
                validateCVV = "Invalid"; }

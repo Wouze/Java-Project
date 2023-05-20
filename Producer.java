@@ -7,23 +7,14 @@ import java.util.Scanner;
 public class Producer {
     
     private String CompanyName;
-    //private int securityCode;
     private boolean isPrem;
     private int NOguests;
     private int numberOfCamera;
-    //private int id;
     private String userName;
     private String Password;
    
 
 
-    /* public Producer(String userName, String Password) {
-
-        this.userName = userName;
-        this.Password = Password;
-       
-    }
-     */
     Scanner input = new Scanner(System.in);
 
     public Producer(int NOguests, int numberOfCamera) {
@@ -74,7 +65,6 @@ public class Producer {
         }
 
     }
-    //public void addMovie(){
 
     @Override
     public String toString() {

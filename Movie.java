@@ -9,7 +9,7 @@ public int movieId ;
   public int ageLimit;
   public int duration;
  
-//JANAN: removed movie ID***********
+
     public Movie( String name, String Genra, int ageLimit, int duration) {
         this.name = name;
         this.Genra = Genra;

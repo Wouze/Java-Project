@@ -1,6 +1,5 @@
-
 package JavaProject;
-  
+import JavaProject.Producer;
 import java.io.*;
 import java.util.Formatter;
 import java.util.FormatterClosedException;
@@ -25,7 +24,7 @@ public class WriteFiletxt {
         }/// End of Second catch
     }
     
-    public void writeFile(Producer p){
+    public void writeFile(Booking p){
         try{
             Output.format(p.toString()+"/n");
            

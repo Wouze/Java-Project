@@ -50,7 +50,7 @@ public class Food implements Payable {
                break;
        }
        Tprice = Fprice+Dprice;
-        //System.out.println("Your Total Price: "+Tprice+"SAR");
+     
       return Tprice;
        
     }

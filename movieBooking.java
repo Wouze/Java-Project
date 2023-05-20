@@ -1,5 +1,7 @@
 
 package JavaProject;
+import JavaProject.Hall;
+import JavaProject.Booking;
 import java.util.*;
 
 
@@ -371,8 +373,8 @@ public movieBooking(  ) {
 
     @Override
     public String toString() {
-        return String.format("Seat Number: %s\nIsVip:%b", getSeatnum(),isIsVIP());
-    }
+return String.format("Movie Ticket \nMovie : %s \nSeat : %s \nIs VIP : %b \nTotal Price : %.2f", super.movies.get(super.getMovieId()).getName() ,getSeatnum() , isIsVIP() , super.getPrice()); 
+        }
 
     public void printTicketInfo(){
         String hallType="";

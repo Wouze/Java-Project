@@ -14,7 +14,7 @@ public class ReadtxtFile {
    
     public void openFile(String fileName){
         try {
-            input =new Scanner (new File("Producer.txt"));
+            input =new Scanner (new File(fileName));
            
         } catch (FileNotFoundException fileNotfound){
            System.err.println("You don't Open or Creat the file yet ");

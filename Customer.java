@@ -21,7 +21,7 @@ public class Customer {
                
     }
 
-   //adeem 
+
     public Customer() {
         this("" , "",0, false);
     }

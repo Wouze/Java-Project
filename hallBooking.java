@@ -1,5 +1,7 @@
 package JavaProject;
 	
+import JavaProject.Booking;
+
 public class hallBooking extends Booking{
     String hallType;
        public hallBooking(int price, String hallType) {
@@ -28,7 +30,8 @@ public class hallBooking extends Booking{
 
     @Override
     public String toString() {
-        return String.format("Hall Type: %s", getHallType());
+       
+        return String.format("Hall Ticket \n Movie : %s\n Hall Type : %s\n Total Price : %.2f", super.movies.get(super.getMovieId()).getName() , getHallType() ,super.getPrice() );
     }
 
 }
