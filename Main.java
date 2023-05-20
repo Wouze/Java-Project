@@ -37,6 +37,7 @@ public class Main {
         int camera;
         //Arraylist of tickets
 
+        
         ArrayList<Booking> ticketsArray = new ArrayList();
 
        
@@ -293,8 +294,12 @@ public class Main {
                         //Take Card Info
                         Payment.cardInfo();
                         //Print Payment message
+                       
                         System.out.println("\nOnline Purchase\nAmount: " + (Ticket1.TicketTotalPrice() + FDTotalPrice) + " SAR\nAt AI Cinema\n");
-
+                       
+                      //ENHANCED FOR PRINTS HALLBOOKING ELEMENTS OF ARRAYLIST TICKETSARRAY
+                  
+                    System.out.println();
                     }
                     write.openFile("CustomerTicket.txt");
                     for (Booking b : ticketsArray) {
@@ -317,7 +322,21 @@ public class Main {
                             read.openFile("CustomerTicket.txt");
                             read.readFile();
                             read.closefile();}
-                   System.exit(0);
+                      //ENHANCED FOR PRINTS ELEMENTS OF ARRAYLIST TICKETSARRAY
+                    for (Booking e : ticketsArray) {
+                        if (e instanceof hallBooking) {
+                            hallBooking ele = (hallBooking) e;
+                           if( ele.getHallType().toLowerCase().equals("vip")){
+                           System.out.println("Congratulations! you got 10% discount for booking a VIP hall ");}
+                        }
+                        else if(e instanceof movieBooking){
+                            movieBooking ele = (movieBooking) e;
+                        if(ele.isIsVIP())
+                            System.out.println("Congratulations! you got 5% discount for booking a VIP seat ");
+                            
+                    }}   
+                   
+                   
                 } 
                 else if (choice == 2) { //Producer
                     int i = 1;
@@ -440,15 +459,8 @@ public class Main {
 
                     }
 
-                    //ENHANCED FOR PRINTS ELEMENTS OF ARRAYLIST TICKETSARRAY
-                    for (Booking e : ticketsArray) {
-                        System.out.println("ToString Method:");
-                        if (e instanceof hallBooking) {
-                            hallBooking ele = (hallBooking) e;
-                            ele.printHallBooking(sm);
-                        }
-                    }
-
+                    
+                      if(choice ==1)System.exit(0);
                     System.out.println("\n\nEnter any num to Quit or 1 to play again");
                     Again = input.nextInt();
                     System.out.println();}

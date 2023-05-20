@@ -21,9 +21,13 @@ public abstract class Booking implements Payable {
         this.price = price;
     }
 
-    //array of movies
-    static ArrayList<Movie> movies = new ArrayList<>();
+     public Booking() {
+        this(0.0);
+    }
 
+    static Movie[] movies2 = new Movie[10];
+    static int nbMovie = 0;
+    
     //accounts
     private static ArrayList<Customer> accounts = new ArrayList<>();
     private static int accountCounter = -1;
@@ -34,10 +38,10 @@ public abstract class Booking implements Payable {
     // method ageLimit
 
     public static boolean checkAgeLimit(int sm) {
-        if (movies.get(sm).getAgeLimit() > accounts.get(getAccountCounter()).getAge()) {
+        if (movies2[sm].getAgeLimit() > accounts.get(getAccountCounter()).getAge()) {
             return false;
 
-        } else if (movies.get(sm).getAgeLimit() <= accounts.get(getAccountCounter()).getAge()) {
+        } else if (movies2[sm].getAgeLimit() <= accounts.get(getAccountCounter()).getAge()) {
             return true;
         } else {
             return true;
@@ -45,13 +49,13 @@ public abstract class Booking implements Payable {
     }
 
     public static void addProducerM(Movie movie) {
-        movies.add(movie);
+        movies2[nbMovie++] = movie;
     }
 
     public static void defultMovie() {
-        movies.add(new Movie("Barbie", "Animation", 7, 120));
-        movies.add(new Movie("Avengers:End Game", "Action", 18, 160));
-        movies.add(new Movie("Harry potter:Cup Of Fire", "Sci-fi", 15, 140));
+        movies2[nbMovie++] = new Movie("Barbie", "Animation", 7, 120);
+        movies2[nbMovie++] = new Movie("Avengers:End Game", "Action", 18, 160);
+        movies2[nbMovie++] = new Movie("Harry potter:Cup Of Fire", "Sci-fi", 15, 140);
 
     }
 
@@ -66,8 +70,8 @@ public abstract class Booking implements Payable {
     public static void printMovies() {
         System.out.println("Showing Now:");
         int counter = 0;
-        for (Movie ele : movies) {
-            System.out.printf("%d-%s \n", (counter + 1), ele);
+        for (int i =0; i<nbMovie; i++){
+            System.out.printf("%d-%s \n", (counter + 1), movies2[i]);
             counter++;
         }
     }
@@ -147,8 +151,12 @@ public abstract class Booking implements Payable {
         return movieId;
     }
 
-    public static ArrayList<Movie> getMovies() {
-        return movies;
+    public static Movie[] getMovies2() {
+        return movies2;
+    }
+
+    public static void setMovies2(Movie[] movies2) {
+        Booking.movies2 = movies2;
     }
 
     public static ArrayList<Customer> getAccounts() {
@@ -192,9 +200,6 @@ public abstract class Booking implements Payable {
         return "Booking{" + "bookingId=" + bookingId + ", price=" + price + ", movieId=" + movieId + ", ticketQ=" + ticketQ + '}';
     }
 
-    public static void setMovies(ArrayList<Movie> movies) {
-        Booking.movies = movies;
-    }
 
     public static void setAccounts(ArrayList<Customer> accounts) {
         Booking.accounts = accounts;

@@ -12,6 +12,11 @@ public class Hall {
         seats = new boolean[NPseats];
         this.type = type;
     }
+    
+    public Hall() {
+        this(0,"",0);
+        
+    }
 
     public boolean[] getSeats() {
         return seats;
@@ -29,6 +34,10 @@ public class Hall {
 
     public void setType(String type) {
         this.type = type;
+    }
+    @Override
+    public String toString() {
+        return String.format("seats:%b/ntype:%s/nhallID:%d/n",seats,type,hallID);
     }
 }
 

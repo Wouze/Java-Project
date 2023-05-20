@@ -3,9 +3,7 @@ package JavaProject;
 
 
 public class Food implements Payable {
-     private String food;
-   private String drink;
-   
+     
     static String[] Food = {"Popcorn","Nachos","Chocolate Bar"};
     static String[] Drinks ={"Slushie","Pepsi","Water"};
    

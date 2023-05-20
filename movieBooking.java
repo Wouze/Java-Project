@@ -373,7 +373,7 @@ public movieBooking(  ) {
 
     @Override
     public String toString() {
-return String.format("Movie Ticket \nMovie : %s \nSeat : %s \nIs VIP : %b \nTotal Price : %.2f", super.movies.get(super.getMovieId()).getName() ,getSeatnum() , isIsVIP() , super.getPrice()); 
+return String.format("Movie Ticket \nMovie : %s \nSeat : %s \nIs VIP : %b \nTotal Price : %.2f", super.movies2[super.getMovieId()].getName() ,getSeatnum() , isIsVIP() , super.getPrice()); 
         }
 
     public void printTicketInfo(){
@@ -382,16 +382,12 @@ return String.format("Movie Ticket \nMovie : %s \nSeat : %s \nIs VIP : %b \nTota
             hallType="VIP";
        
     System.out.println("Ticket information:");
-    System.out.println("Movie:" + super.movies.get(super.getMovieId()).getName() +" Genra:"+super.movies.get(super.getMovieId()).getGenra()+"\nYou have booked in "+hallType+" Hall, seat:"+seatnum+"\nTotal:"+super.getPrice());//continue all info
+    System.out.println("Movie:" + super.movies2[super.getMovieId()].getName() +" Genra:"+super.movies2[super.getMovieId()].getGenra()+"\nYou have booked in "+hallType+" Hall, seat:"+seatnum+"\nTotal:"+super.getPrice());//continue all info
    
     }
-    //JANAN***********
+   
 public double TicketTotalPrice(){
 return super.getPrice();
 }
-//    @Override
-//    public double calcPrice() {
-//        double price = 25 + 25 * TAX - (checkDiscount(true));
-//
-//        return price;}
+      
     }

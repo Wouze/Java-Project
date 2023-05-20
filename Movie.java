@@ -16,7 +16,9 @@ public int movieId ;
         this.ageLimit = ageLimit;
         this.duration = duration;
     }
-   
+   public Movie() {
+        this("", "", 0, 0);
+    }
 
     @Override
     public String toString() {
