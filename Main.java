@@ -327,12 +327,12 @@ public class Main {
                         if (e instanceof hallBooking) {
                             hallBooking ele = (hallBooking) e;
                            if( ele.getHallType().toLowerCase().equals("vip")){
-                           System.out.println("Congratulations! you got 10% discount for booking a VIP hall ");}
+                           System.out.println("Congratulations! you got 10% discount coupon for your next time ");}
                         }
                         else if(e instanceof movieBooking){
                             movieBooking ele = (movieBooking) e;
                         if(ele.isIsVIP())
-                            System.out.println("Congratulations! you got 5% discount for booking a VIP seat ");
+                            System.out.println("Congratulations! you got 5% discount coupon for your next time ");
                             
                     }}   
                    
