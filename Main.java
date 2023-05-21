@@ -1,7 +1,6 @@
 package JavaProject;
 
-import JavaProject.Food;
-import JavaProject.Booking;
+
 import java.util.*;
 
 public class Main {
